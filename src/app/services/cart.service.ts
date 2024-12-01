@@ -33,4 +33,8 @@ export class CartService {
   calculateTotalPrice() {
     return this.cartItems.reduce((sum, item) => sum + item.price * item.quantity, 0);
   }
+
+  clearCart():void{
+    this.cartItems = [];
+  }
 }

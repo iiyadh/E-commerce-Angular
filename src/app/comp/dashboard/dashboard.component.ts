@@ -114,16 +114,16 @@ export class DashboardComponent implements OnInit {
     });
   }
 
-  shipOrder(id: string): void {
-    this.orderService.shipOrder(id).subscribe({
-      next: (order) => {
-        console.log('Order shipped:', order);
-      },
-      error: (err) => {
-        console.error('Error shipping order:', err);
-      }
-    });
-  }
+  // shipOrder(id: string): void {
+  //   this.orderService.shipOrder(id).subscribe({
+  //     next: (order) => {
+  //       console.log('Order shipped:', order);
+  //     },
+  //     error: (err) => {
+  //       console.error('Error shipping order:', err);
+  //     }
+  //   });
+  // }
 
   deleteOrder(id: string): void {
     this.orderService.deleteOrder(id).subscribe({

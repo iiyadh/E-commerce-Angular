@@ -65,6 +65,7 @@ export class CartComponent implements OnInit {
         console.log('Order confirmed:', response);
         alert('Order confirmed! Thank you for your purchase.');
         this.cartItems = [];
+        this.cartService.clearCart();
         this.calculateTotals();
       },
       (error) => {

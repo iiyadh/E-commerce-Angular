@@ -1,41 +1,55 @@
+/* Global Variables */
+$primary-color: #007bff;
+$secondary-color: #f5f5f5;
+$text-color: #333;
+$hover-color: rgba(0, 0, 0, 0.1);
+
 .mat-toolbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: #f5f5f5;
-    padding: 0 20px;
-    position:sticky;
-    top:0;
-    
-  
-    .spacer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: $secondary-color;
+  padding: 0 20px;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+
+  .spacer {
       flex: 1;
-    }
-  
-    a {
+  }
+
+  a {
       text-decoration: none;
-      color: #333; 
+      color: $text-color;
       font-weight: 500;
       margin: 0 10px;
       font-size: 16px;
       transition: color 0.3s ease;
-  
+
       &:hover {
-        color: #007bff; 
-        text-decoration: underline;
+          color: $primary-color;
       }
-    }
-  
-    button {
-      color: #333;
-      &:hover {
-        background-color: rgba(0, 0, 0, 0.1);
-      }
-    }
-  
-    mat-icon {
-      color: #333; 
-    }
   }
-  
-  
+
+  button {
+      color: $text-color;
+      &:hover {
+          background-color: $hover-color;
+      }
+  }
+
+  mat-icon {
+      color: $text-color;
+      font-size: 24px;
+  }
+}
+@media (max-width: 768px) {
+  .mat-toolbar {
+      flex-direction: column;
+      padding: 10px;
+
+      a {
+          margin: 5px 0;
+      }
+  }
+}
