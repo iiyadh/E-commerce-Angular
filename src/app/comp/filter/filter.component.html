@@ -1,0 +1,12 @@
+<div class="filter-container">
+    <label>
+      Min Price:
+      <input type="number" [(ngModel)]="minPrice" placeholder="0" />
+    </label>
+    <label>
+      Max Price:
+      <input type="number" [(ngModel)]="maxPrice" placeholder="1000" />
+    </label>
+    <button (click)="applyFilter()">Apply Filter</button>
+</div>
+  

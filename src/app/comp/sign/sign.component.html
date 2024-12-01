@@ -1,0 +1,49 @@
+<div class="form-container">
+    <div class="toggle-buttons">
+      <button (click)="toggleForm()" [disabled]="!slideLeft">Sign In</button>
+      <button (click)="toggleForm()" [disabled]="slideLeft">Sign Up</button>
+    </div>
+  
+    <div class="form-wrapper" [ngClass]="{'slide-left': slideLeft, 'slide-right': !slideLeft}">
+      <!-- Sign-In Form -->
+      <form id="sign-in" [ngClass]="{'active': !slideLeft}" (submit)="handleLogin($event)">
+        <mat-form-field appearance="outline">
+          <mat-label>Email</mat-label>
+          <input matInput placeholder="pat@example.com" [(ngModel)]="formDataSignIn.email" name="email" required />
+        </mat-form-field>
+  
+        <mat-form-field appearance="outline">
+          <mat-label>Password</mat-label>
+          <input matInput type="password" [(ngModel)]="formDataSignIn.password" name="password" required />
+        </mat-form-field>
+  
+        <button mat-raised-button color="primary">Login</button>
+      </form>
+  
+      <!-- Sign-Up Form -->
+      <form id="sign-up" [ngClass]="{'active': slideLeft}" (submit)="handleCreateAccount($event)">
+        <mat-form-field appearance="outline">
+          <mat-label>Name</mat-label>
+          <input matInput type="text" [(ngModel)]="formDataSignUp.name" name="name" required />
+        </mat-form-field>
+  
+        <mat-form-field appearance="outline">
+          <mat-label>Email</mat-label>
+          <input matInput type="email" [(ngModel)]="formDataSignUp.email" name="email" required />
+        </mat-form-field>
+  
+        <mat-form-field appearance="outline">
+          <mat-label>Password</mat-label>
+          <input matInput type="password" [(ngModel)]="formDataSignUp.password" name="password" required />
+        </mat-form-field>
+  
+        <mat-form-field appearance="outline">
+          <mat-label>Confirm Password</mat-label>
+          <input matInput type="password" [(ngModel)]="formDataSignUp.confirmPassword" name="confirmPassword" required />
+        </mat-form-field>
+  
+        <button mat-raised-button color="accent">Create Account</button>
+      </form>
+    </div>
+  </div>
+  

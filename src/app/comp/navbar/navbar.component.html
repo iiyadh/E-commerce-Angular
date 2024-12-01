@@ -1,0 +1,9 @@
+<mat-toolbar>
+    <span>E-Commerce</span>
+    <span class="spacer"></span>
+    <a mat-button routerLink="/product">Products</a>
+    <a mat-button routerLink="/cart">Cart</a>
+    <a *ngIf="isAdmin" mat-button routerLink="/dashboard">Dashboard</a>
+    <button mat-button (click)="logout()">Logout</button>
+  </mat-toolbar>
+  

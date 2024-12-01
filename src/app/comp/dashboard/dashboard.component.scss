@@ -1,0 +1,38 @@
+mat-card {
+    padding: 1rem;
+    margin: 1rem;
+  }
+  
+  mat-header-row, mat-row {
+    background: #fff;
+  }
+  
+  mat-cell, mat-header-cell {
+    padding: 8px;
+  }
+  
+  button {
+    margin-right: 8px;
+}
+
+.button-container {
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+  margin-top: 20px;
+
+  button {
+    font-size: 14px;
+    padding: 10px 20px;
+    border-radius: 8px;
+    transition: background-color 0.3s ease;
+
+    &:hover {
+      background-color: #007bff;
+    }
+
+    &:focus {
+      outline: none;
+    }
+  }
+}

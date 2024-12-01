@@ -1,0 +1,94 @@
+.form-container {
+    display: grid;
+    place-content: center;
+    height: 100%;
+    background-color: #777777;
+  
+    .toggle-buttons {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 20px;
+  
+      button {
+        padding: 10px 40px;
+        font-size: 1.2rem;
+        font-family: Arial, sans-serif;
+        background-color: #006496;
+        color: #fff;
+        border: none;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        &:first-child {
+          border-radius: 15px 0 0 15px;
+        }
+        &:last-child {
+          border-radius: 0 15px 15px 0;
+        }
+  
+        &:hover {
+          background-color: #0099e6;
+        }
+  
+        &:disabled {
+          background-color: #555;
+          cursor: pointer;
+        }
+      }
+    }
+  
+    .form-wrapper {
+      display: flex;
+      width: 200%;
+      position: relative;
+      transform: translateX(0);
+      transition: transform 0.5s ease;
+  
+      &.slide-left {
+        transform: translateX(-50%);
+      }
+      &.slide-right {
+        transform: translateX(0);
+      }
+  
+      form {
+        flex: 0 0 50%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        background-color: hsl(0, 0%, 77%);
+        border-radius: 12px;
+        padding: 25px 0;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        transition: opacity 0.5s ease;
+        opacity: 0;
+        pointer-events: none;
+
+        input{
+            font-size: .8rem;
+        }
+
+        button{
+            padding: 10px 50px;
+            border: none;
+            border-radius: 10px;
+            background-color: #009900;
+            color:white;
+            font-weight: 900;
+            font-size: 1rem;
+            font-family: Arial, sans-serif;
+            transition: background-color 0.3s ease;
+
+            &:hover{
+                background-color: #00cc00;
+            }
+        }
+  
+        &.active {
+          opacity: 1;
+          pointer-events: auto;
+        }
+      }
+    }
+  }
+  
